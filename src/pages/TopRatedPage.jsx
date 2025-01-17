@@ -3,7 +3,8 @@ import { AppContext } from "../context/AppContext";
 import { Link } from "react-router-dom";
 
 const TopRatedPage = () => {
-  const { getTopRatedMovies, topRatedMovies } = useContext(AppContext);
+  const { getTopRatedMovies, topRatedMovies, backendImgUrl } =
+    useContext(AppContext);
 
   useEffect(() => {
     getTopRatedMovies();
@@ -22,7 +23,7 @@ const TopRatedPage = () => {
             className="overflow-hidden"
           >
             <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              src={backendImgUrl + movie.poster_path}
               alt={movie.title}
               className="w-full h-96 rounded-lg object-cover object-center"
             />

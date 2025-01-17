@@ -1,5 +1,9 @@
+import { useContext } from "react";
+import { AppContext } from "../context/AppContext";
+
 /* eslint-disable react/prop-types */
 const MovieCast = ({ movieCast }) => {
+  const { backendImgUrl } = useContext(AppContext);
   return (
     <div className="container mx-auto p-4 ">
       <h1 className="mx-5 mb-4 text-white text-5xl font-bold">Movie Cast</h1>
@@ -7,7 +11,7 @@ const MovieCast = ({ movieCast }) => {
         {movieCast.map((cast) => (
           <div key={cast.id} className="overflow-hidden ">
             <img
-              src={`https://image.tmdb.org/t/p/w500${cast.profile_path}`}
+              src={backendImgUrl + cast.profile_path}
               alt={cast.title}
               className="w-full h-96 rounded-lg object-cover object-center"
             />

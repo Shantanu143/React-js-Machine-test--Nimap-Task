@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 
 const HomePage = () => {
-  const { movies, getAllMovies } = useContext(AppContext);
+  const { movies, getAllMovies,backendImgUrl } = useContext(AppContext);
  
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const HomePage = () => {
             className="overflow-hidden "
           >
             <img
-              src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+              src={backendImgUrl + movie.poster_path}
               alt={movie.title}
               className="w-full h-96 rounded-lg object-cover object-center"
             />

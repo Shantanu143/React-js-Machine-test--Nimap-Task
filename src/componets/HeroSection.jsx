@@ -1,11 +1,15 @@
+import { useContext } from "react";
+import { AppContext } from "../context/AppContext";
+
 /* eslint-disable react/prop-types */
 const HeroSection = ({ movie }) => {
+  const { backendImgUrl } = useContext(AppContext);
   return (
     <div className="container mx-auto py-8 px-4">
       <div
         className="relative bg-cover bg-center rounded-lg shadow-lg"
         style={{
-          backgroundImage: `url('https://image.tmdb.org/t/p/original${movie.backdrop_path}')`,
+          backgroundImage: `url('${backendImgUrl + movie.backdrop_path}')`,
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-60 rounded-lg"></div>
@@ -14,7 +18,7 @@ const HeroSection = ({ movie }) => {
           <div className="md:w-1/2 w-full flex-shrink-0">
             <div className="flex flex-col md:flex-row items-center justify-start">
               <img
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                src={backendImgUrl + movie.poster_path}
                 alt={movie.title}
                 className="rounded-lg w-44 h-auto object-cover shadow-lg mb-6 md:mb-0 md:w-1/3"
               />
