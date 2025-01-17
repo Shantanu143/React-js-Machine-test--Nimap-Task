@@ -29,7 +29,6 @@ const SingleMovieDetailPage = () => {
         `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${Api_key}&language=en-US`
       );
       setMovieCast(data.cast);
-      console.log(data.cast);
     } catch (error) {
       console.error("Error fetching movie cast:", error.message);
     }
