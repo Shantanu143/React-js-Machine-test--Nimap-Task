@@ -8,7 +8,7 @@ import MovieCast from "../componets/MovieCast";
 const SingleMovieDetailPage = () => {
   const { id } = useParams();
   const { setMovieId, movie, movieCast } = useContext(AppContext);
- 
+
   useEffect(() => {
     setMovieId(id);
   }, [id]);

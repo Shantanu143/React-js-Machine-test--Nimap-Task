@@ -4,6 +4,7 @@ import TopRatedPage from "./pages/TopRatedPage";
 import UpcomingMoviesPage from "./pages/UpcomingMoviesPage";
 import SingleMovieDetailPage from "./pages/SingleMovieDetailPage";
 import Navbar from "./componets/Navbar";
+import SearchMovies from "./pages/SearchMovies";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/top-rated-movies" element={<TopRatedPage />} />
           <Route path="/upcoming-movies" element={<UpcomingMoviesPage />} />
           <Route path="/movie/:id" element={<SingleMovieDetailPage />} />
+          <Route path="/search" element={<SearchMovies />} />
         </Routes>
       </div>
     </>
