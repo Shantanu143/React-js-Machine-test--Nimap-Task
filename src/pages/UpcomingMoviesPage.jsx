@@ -12,18 +12,17 @@ const UpcomingMoviesPage = () => {
 
   return (
     <>
-      {loading ? (
-        <div className="text-center text-white mt-4">Loading...</div>
-      ) : error ? (
-        <div className="text-center text-red-500 mt-4">{error}</div>
-      ) : upComingMovies.length > 0 ? (
-        <div className="container mx-auto py-4">
-          {minimum && maximum && (
-            <h1 className="text-2xl font-semibold text-gray-200 mb-6">
-              Upcoming Movies from {minimum} to {maximum}
-            </h1>
-          )}
-
+      <div className="container mx-auto p-5">
+        {minimum && maximum && (
+          <h1 className="text-2xl font-semibold text-gray-200 mb-6">
+            Upcoming Movies from {minimum} to {maximum}
+          </h1>
+        )}
+        {loading ? (
+          <div className="text-center text-white mt-4">Loading...</div>
+        ) : error ? (
+          <div className="text-center text-red-500 mt-4">{error}</div>
+        ) : upComingMovies.results?.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {upComingMovies.results?.map((movie) => (
               <Link
@@ -48,10 +47,10 @@ const UpcomingMoviesPage = () => {
               </Link>
             ))}
           </div>
-        </div>
-      ) : upComingMovies && !loading ? (
-        <div className="text-center text-white mt-4">No results found.</div>
-      ) : null}
+        ) : upComingMovies && !loading ? (
+          <div className="text-center text-white mt-4">No results found.</div>
+        ) : null}
+      </div>
     </>
   );
 };

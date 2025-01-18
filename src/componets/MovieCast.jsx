@@ -3,7 +3,7 @@ import { AppContext } from "../context/AppContext";
 
 /* eslint-disable react/prop-types */
 const MovieCast = ({ movieCast }) => {
-  const { backendImgUrl,loading,error } = useContext(AppContext);
+  const { backendImgUrl, loading, error } = useContext(AppContext);
   return (
     <>
       {loading ? (

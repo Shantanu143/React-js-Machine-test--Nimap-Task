@@ -12,7 +12,7 @@ const SearchMovies = () => {
       ) : error ? (
         <div className="text-center text-red-500 mt-4">{error}</div>
       ) : searchResults.length > 0 ? (
-        <div className="container mx-auto py-4 ">
+        <div className="container mx-auto p-5 ">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {searchResults.map((movie) => (
               <Link

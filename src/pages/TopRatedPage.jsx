@@ -16,7 +16,7 @@ const TopRatedPage = () => {
       ) : error ? (
         <div className="text-center text-red-500 mt-4">{error}</div>
       ) : topRatedMovies.length > 0 ? (
-        <div className="container mx-auto py-4">
+        <div className="container mx-auto p-5">
           <h1 className="text-2xl font-semibold text-gray-200 mb-6">
             Top Rated Movies
           </h1>
